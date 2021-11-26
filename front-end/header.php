@@ -2,28 +2,27 @@
     <nav hidden class="nav-white  full-width header-fancy top-0 ps-10 pe-10 bg-white">
         <div class="container-fluid">
             <div class="row justify-content-end">
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="d-lg-flex d-block">
-                        <div class="logo">
-                            <a href="index.php" class="brand text-center">
-                                <img src="../images/logo-home.svg" alt=""/>
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-xl-2 col-md-6 col-12 nav-header">
+                    <a href="index.php" class="brand text-center">
+                        <img src="../images/logo-home.svg" alt=""/>
+                    </a>
+                    <button class="toggle-bar mt-20">
+                        <span class="ti-menu"></span>
+                    </button>	
                 </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <form class="d-flex mt-40">
+                <div class="col-xl-4 col-md-6 col-12">
+                    <form class="d-flex mt-xl-40 mt-lg-30 mt-md-15">
                         <div class="input-group ">
                             <input type="text" class="form-control" placeholder="Search" name="search">				      
                             <button class="input-group-text bg-primary text-white"><i class="fa fa-search"></i></button>
                         </div>
                     </form>			  
                 </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                <h3 class="text-primary mt-40"><i class="fa fa-clock-o"></i> The simpler way to find job anytime!</h3>
+                <div class="col-xl-4 col-md-6 col-12">
+                    <h3 class="text-primary mt-xl-45"> The simpler way to find job anytime!</h3>
                 </div>
-                <div class="col-lg-2 col-md-2 col-12">
-                    <ul class="menu mt-40 float-end">	
+                <div class="col-xl-2 col-md-6 col-12">
+                    <ul class="menu mt-xl-40 float-xl-end">	
                         <li>
                             <a href="post-job.php">Post Job</a>
                         </li>			
@@ -37,32 +36,26 @@
                     </ul>
                 </div>
             </div>
-        </div>
-                                    
-        <div class="container-fluid">
+        </div>        
+        <div class="container-fluid d-none d-xl-block">
             <div class="row justify-content-start">
                 <div class="col-lg-4 col-md-5 col-12">
-                    <ul class="menu">			
-                        <li><a href="services.php" class="ms-0">Yard Work</a></li>
+                    <ul id="main-menu" class="sm sm-blue text-white ">
+                        <li><a href="services.php" class="ps-0">Yard Work</a></li>
                         <li><a href="services.php">TV Mounting</a></li>
                         <li><a href="services.php">Handyman</a></li>
                         <li><a href="services.php">Help Moving</a></li>    
-                        <li><a href="services.php">Delivery Service</a></li>                     
-                        <li class="dropdown">
-                            <a href="#" class="me-0">More</a>
-                            <ul class="dropdown-menu">                 
-                                <li><a href="services.php">Hang Pictures</a></li>      
-                                <li><a href="services.php">Lawn Care Services</a></li>
-                                <li><a href="services.php">Painting</a></li>
-                                <li><a href="services.php">Grocery Shopping & Delivery</a></li>
-                                <li><a href="services.php">Furniture Assembly</a></li>
-                                <li><a href="services.php">Lighting Installation</a></li>
-                                <li><a href="services.php">Virtual & Online Tasks</a></li>
-                                <li><a href="services.php">Contactless Tasks</a></li>
-                                <li><a href="services.php">Volunteer Help</a></li>
-                                <li><a href="services.php">IKEA Services</a></li>
-                            </ul>
-                        </li>	
+                        <li><a href="services.php">Delivery Service</a></li>                 
+                        <li><a href="services.php">Hang Pictures</a></li>      
+                        <li><a href="services.php">Lawn Care Services</a></li>
+                        <li><a href="services.php">Painting</a></li>
+                        <li><a href="services.php">Grocery Shopping & Delivery</a></li>
+                        <li><a href="services.php">Furniture Assembly</a></li>
+                        <li><a href="services.php">Lighting Installation</a></li>
+                        <li><a href="services.php">Virtual & Online Tasks</a></li>
+                        <li><a href="services.php">Contactless Tasks</a></li>
+                        <li><a href="services.php">Volunteer Help</a></li>
+                        <li><a href="services.php">IKEA Services</a></li>                                       
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-2 col-12  w-auto">
@@ -119,5 +112,5 @@
                 </div>
             </div>
         </div>
-    </nav>
+	</nav>
 </header>
