@@ -97,7 +97,7 @@
 								<div class="tab-pane fade show active" id="pills-create-a-Job" role="tabpanel" aria-labelledby="pills-create-a-Job-tab">
 									<div class="row">
 										<div class="col-12">
-											<form class="form">
+											<form class="form" method="post" enctype="multipart/form-data">
 												<div>
 													<h4 class="box-title text-primary"><span class="fa fa-edit me-15"></span> Create a Job</h4>
 													<hr class="my-15">
@@ -134,19 +134,23 @@
 														    	<textarea rows="4" class="form-control" placeholder="Job Description" id="job-description" name="job-description"></textarea>
 															</div>
 													  	</div>
+														<div class="col-md-7 col-12  mb-15">
+															<div class="form-group">
+														    	<label class="form-label">YouTube Video of Project :</label>
+														    	<input type="text" class="form-control" placeholder="Enter YouTube URL" name="job-title" id="job-title">
+															</div>
+													  	</div>
 													  	<div class="col-md-7 col-12  mb-15">
 															<div class="form-group">
-														    	<label class="form-label">Upload a Photo :</label><br>
+														    	<label class="form-label">Upload a Photo :</label> <span class="text-danger" id="error-upload-photo"></span><br>
 														    	<label class="upload-photo">
-                                                                	<input type="file" id="upload-photo" name="upload-photo">
+                                                                	<input type="file" id="upload-photo" name="upload-photo[]" multiple accept=".jpg, .jpeg, .png" >
                                                             	</label>
 															</div>
 													  	</div>
 														<div class="col-md-7 col-12  mb-15">
 															<div class="form-group">
 														    	<label class="form-label">Price :</label><br>
-														    	<button type="button" class="btn btn-outline btn-info btn-xs">$1</button>
-                           										<button type="button" class="btn btn-outline btn-info btn-xs">$5</button>
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$10</button>
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$15</button>
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$20</button>
@@ -156,6 +160,9 @@
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$50</button>
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$100</button>
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$200</button>
+                            									<button type="button" class="btn btn-outline btn-info btn-xs">$250</button>
+                            									<button type="button" class="btn btn-outline btn-info btn-xs">$500</button>
+                            									<button type="button" class="btn btn-outline btn-info btn-xs">$750</button>
                             									<button type="button" class="btn btn-outline btn-info btn-xs">$1000</button>
 															</div>
 													  	</div>
@@ -164,7 +171,7 @@
 															<div class="form-group">
 																<label class="form-label">Job Location : </label>
 																<span class="text-danger">* Your address will only be seen by approved service provider</span>
-																<input type="text" class="form-control" placeholder="Address" name="job-address" id="job-address">
+																<input type="text" class="form-control" placeholder="Address" name="job_address" id="job_address" onFocus="geolocate()">
 															</div>
 															<div class="row">
 																<div class="col-md-4 col-12">
@@ -175,7 +182,58 @@
 																<div class="col-md-4 col-12">
 																	<div class="form-group">
 																		<select class="form-select form-white form-control" data-placeholder="Choose a State" id="job-state" name="job-state">
-																			<option value="">State</option>
+																			<option value="" selected="selected">Select a State</option>
+																			<option value="AL">Alabama</option>
+																			<option value="AK">Alaska</option>
+																			<option value="AZ">Arizona</option>
+																			<option value="AR">Arkansas</option>
+																			<option value="CA">California</option>
+																			<option value="CO">Colorado</option>
+																			<option value="CT">Connecticut</option>
+																			<option value="DE">Delaware</option>
+																			<option value="DC">District Of Columbia</option>
+																			<option value="FL">Florida</option>
+																			<option value="GA">Georgia</option>
+																			<option value="HI">Hawaii</option>
+																			<option value="ID">Idaho</option>
+																			<option value="IL">Illinois</option>
+																			<option value="IN">Indiana</option>
+																			<option value="IA">Iowa</option>
+																			<option value="KS">Kansas</option>
+																			<option value="KY">Kentucky</option>
+																			<option value="LA">Louisiana</option>
+																			<option value="ME">Maine</option>
+																			<option value="MD">Maryland</option>
+																			<option value="MA">Massachusetts</option>
+																			<option value="MI">Michigan</option>
+																			<option value="MN">Minnesota</option>
+																			<option value="MS">Mississippi</option>
+																			<option value="MO">Missouri</option>
+																			<option value="MT">Montana</option>
+																			<option value="NE">Nebraska</option>
+																			<option value="NV">Nevada</option>
+																			<option value="NH">New Hampshire</option>
+																			<option value="NJ">New Jersey</option>
+																			<option value="NM">New Mexico</option>
+																			<option value="NY">New York</option>
+																			<option value="NC">North Carolina</option>
+																			<option value="ND">North Dakota</option>
+																			<option value="OH">Ohio</option>
+																			<option value="OK">Oklahoma</option>
+																			<option value="OR">Oregon</option>
+																			<option value="PA">Pennsylvania</option>
+																			<option value="RI">Rhode Island</option>
+																			<option value="SC">South Carolina</option>
+																			<option value="SD">South Dakota</option>
+																			<option value="TN">Tennessee</option>
+																			<option value="TX">Texas</option>
+																			<option value="UT">Utah</option>
+																			<option value="VT">Vermont</option>
+																			<option value="VA">Virginia</option>
+																			<option value="WA">Washington</option>
+																			<option value="WV">West Virginia</option>
+																			<option value="WI">Wisconsin</option>
+																			<option value="WY">Wyoming</option>
 																		</select>
 																	</div>
 																</div>
@@ -189,11 +247,24 @@
 														<div class="col-md-7 col-12  mb-15">
 															<div class="form-group">
 														    	<label class="form-label">Job Verification :</label><br>
-														    	<button type="button" class="btn btn-outline btn-info btn-sm w-40 mb-10 me-10"><i class="fa fa-envelope"></i></button> Email Verification <br>
-                            									<button type="button" class="btn btn-outline btn-info btn-sm w-40 mb-10 me-10"><i class="fa fa-phone"></i></button> Mobile Verification <br>
-                            									<button type="button" class="btn btn-outline btn-info btn-sm w-40 mb-10 me-10"><i class="fa fa-credit-card"></i></button> Credit Card Verification <br>
-                            									<button type="button" class="btn btn-outline btn-info btn-sm w-40 mb-10 me-10"><i class="fas fa-id-card"></i></button> Drivers License Verification <br>
-                            									<button type="button" class="btn btn-outline btn-info btn-sm w-40 mb-10 me-10"><i class="fa fa-syringe"></i></button> Covid Vaccine Verification <br>
+
+
+																<div class="" role="group" aria-label="Basic checkbox toggle button group">
+																	<input type="checkbox" class="btn-check" id="email_verification" name="job_verification[]" autocomplete="off">
+																	<label class="btn btn-outline btn-info btn-sm w-50 mb-10 me-10 px-0" for="email_verification"><i class="fa fa-envelope"></i> </label>Email Verification<br>
+
+																	<input type="checkbox" class="btn-check" id="mobile_verification" name="job_verification[]" autocomplete="off">
+																	<label class="btn btn-outline  btn-info btn-sm w-50 mb-10 me-10 px-0" for="mobile_verification"><i class="fa fa-phone"></i> </label>Mobile Verification<br>
+
+																	<input type="checkbox" class="btn-check" id="credit_card_verification" name="job_verification[]" autocomplete="off">
+																	<label class="btn btn-outline  btn-info btn-sm w-50 mb-10 me-10 px-0" for="credit_card_verification"><i class="fa fa-credit-card"></i> </label>Credit Card Verification<br>
+
+																	<input type="checkbox" class="btn-check" id="drivers_license_verification" name="job_verification[]" autocomplete="off">
+																	<label class="btn btn-outline  btn-info btn-sm w-50 mb-10 me-10 px-0" for="drivers_license_verification"><i class="fa fa-id-card"></i> </label>Drivers License Verification<br>
+
+																	<input type="checkbox" class="btn-check" id="covid_vaccine_verification" name="job_verification[]" autocomplete="off">
+																	<label class="btn btn-outline  btn-info btn-sm w-50 mb-10 me-10 px-0" for="covid_vaccine_verification"><i class="fa fa-syringe"></i> </label>Covid Vaccine Verification<br>
+																</div>
 															</div>
 													  	</div>
 													</div>
@@ -342,6 +413,176 @@
 										  <div id="calendar"></div> 
 									  </div>
 									</div>
+								</div>
+								<div class="tab-pane fade" id="pills-my-verifications" role="tabpanel" aria-labelledby="pills-my-verifications-tab">									
+									<h4 class="box-title mb-0">
+										My Verifications
+									</h4>
+									<hr>
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item"> <a class="nav-link ms-0 active" data-bs-toggle="tab" href="#verify-email" role="tab"><span class="hidden-sm-up"><i class="fa fa-envelope"></i></span> <span class="hidden-xs-down">Verify Email</span></a> </li>
+										<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#verify-mobile-phone" role="tab"><span class="hidden-sm-up"><i class="fa fa-phone"></i></span> <span class="hidden-xs-down">Verify Mobile Phone</span></a> </li>
+										<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#verify-credit-card" role="tab"><span class="hidden-sm-up"><i class="fa fa-credit-card"></i></span> <span class="hidden-xs-down">Verify Credit Card</span></a> </li>
+										<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#verify-drivers-license  " role="tab"><span class="hidden-sm-up"><i class="fa fa-id-card"></i></span> <span class="hidden-xs-down">Verify Drivers License</span></a> </li>
+										<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#verify-covid-vaccine" role="tab"><span class="hidden-sm-up"><i class="fa fa-syringe"></i></span> <span class="hidden-xs-down">Verify Covid Vaccine</span></a> </li>
+										
+									</ul>
+
+									<!-- Tab panes -->
+									<div class="tab-content tabcontent-border">
+										<div class="tab-pane active" id="verify-email" role="tabpanel">
+											<div class="p-30">
+												<div class="row">
+													<div class="col-12">
+														<form class="form" method="post" enctype="multipart/form-data">
+															<div>
+																<div class="row">
+																	<div class="col-md-7 col-12  mb-15">
+																		<div class="form-group has-success">
+																			<label class="form-label">Email Address :</label>
+																			<div class="input-group">
+																				<input type="text" class="form-control" placeholder="Email Address" name="verify-email-input" id="verify-email-input" value ="devteam@gobigweb.com" disabled>
+																				<span class="input-group-addon"><i class="fa fa-check mt-5"></i></span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>												
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="verify-mobile-phone" role="tabpanel">
+											<div class="p-30">
+												<div class="row">
+													<div class="col-12">
+														<form class="form" method="post" enctype="multipart/form-data">
+															<div>
+																<div class="row">
+																	<div class="col-md-7 col-12  mb-15">
+																		<div class="form-group">
+																			<label class="form-label">Phone Number :</label>
+																			<input type="text" class="form-control" placeholder="Phone Number" name="verify-phone-number-input" id="verify-phone-number-input" >
+																				
+																		</div>
+																		<div class="d-flex gap-items-2">
+																			<button type="submit" class="btn btn-success">Verify Number</button>
+																		</div>
+																	</div>
+																</div>
+															</div>												
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane " id="verify-credit-card" role="tabpanel">											
+											<div class="p-30">
+												<div class="row">
+													<div class="col-12">
+														<form class="form" method="post" enctype="multipart/form-data">
+															<div>
+																<div class="row">
+																	<div class="col-lg-7 col-md-6 col-12">
+																		<div class="form-group">
+																			<label class="form-label">Name of Card :</label>
+																			<input type="text" class="form-control" placeholder="Name of Card" name="verify-name-of-card-input" id="verify-name-of-card-input" >
+																		</div>
+																		<div class="form-group">
+																			<label class="form-label">Address :</label>
+																			<input type="text" class="form-control" placeholder="Address" name="verify-card-address-input" id="verify-card-address-input" >
+																		</div>
+																		<div class="form-group">
+																			<label class="form-label">Card Number :</label>
+																			<input type="text" class="form-control" placeholder="Card Number" name="verify-card-number-input" id="verify-card-number-input" >
+																		</div>
+																		<div class="row">
+																			<div class="col-7">
+																				<div class="form-group">
+																					<label class="form-label">Expiration Date</label>
+																					<input type="text" class="form-control" name="verify-expiration-date-input" id="verify-expiration-date-input" placeholder="MM / YY" >
+																				</div>
+																			</div>
+																			<div class="col-5 pull-right">
+																				<div class="form-group">
+																					<label class="form-label">CV Code</label>
+																					<input type="text" class="form-control" name="verify-cvc-input" id="verify-cvc-input" placeholder="CVC"> </div>
+																			</div>
+																		</div>
+																		<div class="d-flex gap-items-2">
+																			<button type="submit" class="btn btn-success">Verify Card Number</button>
+																		</div>
+																	</div>
+																	<div class="col-lg-5 col-md-6 col-12">
+																		<h3 class="box-title mt-10">Payment Info</h3>
+																		<p>We'll authorize $1.00 to verify user</p>
+																	</div>
+																</div>
+															</div>												
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="verify-drivers-license" role="tabpanel">
+											<div class="p-30">
+												<div class="row">
+													<div class="col-12">
+														<form class="form" method="post" enctype="multipart/form-data">
+															<div>
+																<div class="row">
+																	<div class="col-md-7 col-12  mb-15">
+																		<div class="form-group">
+																			<label class="form-label">License Number :</label>
+																			<input type="text" class="form-control" placeholder="License  Number" name="verify-license-number-input" id="verify-license-number-input" >
+																		</div>
+																		<div class="form-group">
+																			<label class="form-label">Upload Front and Back Picture of Drivers License :</label> 
+																			<label class="text-danger" id="error-verify-license-upload"></label><br>
+																			<label class="verify-license-upload">
+																				<input type="file" id="verify-license-upload" name="verify-license-upload[]" multiple accept=".jpg, .jpeg, .png">
+																			</label>
+																		</div>
+																		<div class="d-flex gap-items-2">
+																			<button type="submit" class="btn btn-success">Verify License Number</button>
+																		</div>
+																	</div>
+																</div>
+															</div>												
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="verify-covid-vaccine" role="tabpanel">
+											<div class="p-30">
+												<div class="row">
+													<div class="col-12">
+														<form class="form" method="post" enctype="multipart/form-data">
+															<div>
+																<div class="row">
+																	<div class="col-md-7 col-12  mb-15">
+																		<div class="form-group">
+																			<label class="form-label">Upload Picture of Covid Vaccine :</label> 
+																			<label class="text-danger" id="error-verify-license-upload"></label><br>
+																			<label class="verify-license-upload">
+																				<input type="file"  name="verify-covid-vaccine-upload" id="verify-covid-vaccine-upload" accept=".jpg, .jpeg, .png">
+																			</label>
+																		</div>
+																		<div class="d-flex gap-items-2">
+																			<button type="submit" class="btn btn-success">Verify Covid Vaccine</button>
+																		</div>
+																	</div>
+																</div>
+															</div>												
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>	
 							</div>
 						</div>
@@ -367,8 +608,96 @@
 	<script src="../assets/vendor_components/jquery-ui/jquery-ui.min.js"></script>
 	<script src="../assets/vendor_components/fullcalendar/lib/moment.min.js"></script>
 	<script src="../assets/vendor_components/fullcalendar/fullcalendar.min.js"></script>
-	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3KFF-PNXN3FrIAG3mi26WGcpiDYmNPdA&libraries=places&callback=initAutocomplete" async defer></script>
 	<script src="js/template.js"></script>
 	<script src="js/pages/calendar.js"></script>
+	<script>
+		 $(document).ready(function(){
+			$("#upload-photo").change(function(){
+				var $fileUpload = $("#upload-photo");
+				if (parseInt($fileUpload.get(0).files.length)>3){
+					$('#error-upload-photo').text('You can only upload a maximum of 3 files');
+					$fileUpload.val(null);
+				}else{
+					$('#error-upload-photo').text('');
+				}
+			});
+
+			
+
+			$("#verify-license-upload").change(function(){
+				var $fileUpload = $("#verify-license-upload");
+				if (parseInt($fileUpload.get(0).files.length)>2){
+					$('#error-verify-license-upload').text('You can only upload a maximum of 2 files');
+					$fileUpload.val(null);
+				}else{
+					$('#error-verify-license-upload').text('');
+				}
+			});
+		});
+
+
+	var placeSearch, autocomplete;
+    var componentForm = {
+    	street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+    };
+
+    function initAutocomplete() {
+    	// Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('job_address')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+
+		autocomplete.setComponentRestrictions({'country': ['us']});
+    }
+
+    function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+        	document.getElementById(component).value = '';
+          	document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          	var addressType = place.address_components[i].types[0];
+          	if (componentForm[addressType]) {
+            	var val = place.address_components[i][componentForm[addressType]];
+            	document.getElementById(addressType).value = val;
+          	}
+        }
+    }
+
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    function geolocate() {
+        if (navigator.geolocation) {
+    	    navigator.geolocation.getCurrentPosition(function(position) {
+				var geolocation = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude
+				};
+				var circle = new google.maps.Circle({
+					center: geolocation,
+					radius: position.coords.accuracy
+				});
+            	autocomplete.setBounds(circle.getBounds());
+        	});
+        }
+    }
+	</script>
 </body>
 </html>

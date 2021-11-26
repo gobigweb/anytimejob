@@ -40,18 +40,18 @@
         </div>
                                     
         <div class="container-fluid">
-            <div class="row justify-content-end">
-                <div class="col-lg-5 col-md-5 col-12">
+            <div class="row justify-content-start">
+                <div class="col-lg-4 col-md-5 col-12">
                     <ul class="menu">			
                         <li><a href="services.php" class="ms-0">Yard Work</a></li>
                         <li><a href="services.php">TV Mounting</a></li>
                         <li><a href="services.php">Handyman</a></li>
-                        <li><a href="services.php">Help Moving</a></li>
-                        <li><a href="services.php">Delivery Service</a></li>
+                        <li><a href="services.php">Help Moving</a></li>    
+                        <li><a href="services.php">Delivery Service</a></li>                     
                         <li class="dropdown">
                             <a href="#" class="me-0">More</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="services.php">Hang Pictures</a></li>                        
+                            <ul class="dropdown-menu">                 
+                                <li><a href="services.php">Hang Pictures</a></li>      
                                 <li><a href="services.php">Lawn Care Services</a></li>
                                 <li><a href="services.php">Painting</a></li>
                                 <li><a href="services.php">Grocery Shopping & Delivery</a></li>
@@ -65,33 +65,55 @@
                         </li>	
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-2 col-12">
+                <div class="col-lg-2 col-md-2 col-12  w-auto">
                     <div class="form-group row float-end">
                         <label for="date-input" class="col-sm-2 col-form-label">Date</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="date" value="2021-10-27" id="date-input">
+                            <input class="form-control" type="date" value="<?= date('Y-m-d'); ?>" id="date-input">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-12">
+                <div class="col-lg-2 col-md-2 col-12  w-auto">
+                    <div class="form-group row float-end">
+                        <label for="search-zip-code" class="col-sm-4 col-form-label">30 Miles</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text" name="search-zip-code" id="search-zip-code" placeholder="ZIP Code" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-12  w-auto">
                     <div class="form-group row float-end">
                         <label class="col-sm-2 col-form-label">Price </label>
                         <div class="col-sm-10">
-                            <button type="button" class="btn btn-outline btn-info btn-xs"><$20</button>
-                            <button type="button" class="btn btn-outline btn-info btn-xs">$20 - $100</button>
-                            <button type="button" class="btn btn-outline btn-info btn-xs">$100+</button>
+                            <button type="button" class="btn btn-outline btn-info btn-xs">$100 -$250</button>
+                            <button type="button" class="btn btn-outline btn-info btn-xs">$250 - $500</button>
+                            <button type="button" class="btn btn-outline btn-info btn-xs">$500+</button>
                         </div>
                     </div>				  
                 </div>
-                <div class="col-lg-3 col-md-3 col-12">
+                <div class="col-lg-2 col-md-3 col-12  w-auto">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Verifications </label>
                         <div class="col-sm-9 pe-0 ">
-                            <button type="button" class="btn btn-outline btn-info btn-sm"><i class="fa fa-envelope"></i></button>
-                            <button type="button" class="btn btn-outline btn-info btn-sm"><i class="fa fa-phone"></i></button>
-                            <button type="button" class="btn btn-outline btn-info btn-sm"><i class="fa fa-credit-card"></i></button>
-                            <button type="button" class="btn btn-outline btn-info btn-sm"><i class="fas fa-id-card"></i></button>
-                            <button type="button" class="btn btn-outline btn-info btn-sm">All Verifications</button>
+                            <div class="float-end" role="group" aria-label="Basic checkbox toggle button group">
+                                <input type="checkbox" class="btn-check" id="search_email_verification" name="search_job_verification[]" autocomplete="off">
+                                <label class="btn btn-outline btn-info btn-sm px-10 py-5" for="search_email_verification"><i class="fa fa-envelope"></i> </label>
+
+                                <input type="checkbox" class="btn-check" id="search_mobile_verification" name="search_job_verification[]" autocomplete="off">
+                                <label class="btn btn-outline  btn-info btn-sm px-10 py-5" for="search_mobile_verification"><i class="fa fa-phone"></i> </label>
+
+                                <input type="checkbox" class="btn-check" id="search_credit_card_verification" name="search_job_verification[]" autocomplete="off">
+                                <label class="btn btn-outline  btn-info btn-sm px-10 py-5" for="search_credit_card_verification"><i class="fa fa-credit-card"></i> </label>
+
+                                <input type="checkbox" class="btn-check" id="search_drivers_license_verification" name="search_job_verification[]" autocomplete="off">
+                                <label class="btn btn-outline  btn-info btn-sm  px-10 py-5" for="search_drivers_license_verification"><i class="fa fa-id-card"></i> </label>
+
+                                <input type="checkbox" class="btn-check" id="search_all_verification" name="search_job_verification[]" autocomplete="off">
+                                <label class="btn btn-outline  btn-info btn-sm  px-10 py-5" for="search_all_verification">All Verifications</label>
+
+                               
+                            </div>
+                           
                         </div>
                     </div>				  
                 </div>

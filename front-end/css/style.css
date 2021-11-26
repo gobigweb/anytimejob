@@ -37172,12 +37172,12 @@ ul.flexbox {
 /*---box nav-tab---*/
 .nav-tabs .nav-link {
   position: relative;
-  color: #2f579a;
+  color: #4B0082;
   padding: 0.5rem 1.25rem;
   border-radius: 5px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #4B0082;
   margin: 5px 5px;
 }
 
@@ -42993,5 +42993,18 @@ img.away, img.busy, img.offline, img.online {
 /* Firefox Bug: link not triggered */
 .waves-effect .waves-ripple {
   z-index: -1;
+}
+
+.btn-check:checked + .btn-info, .btn-check:active + .btn-info, .btn-info:active{
+  background-color: #2e004f !important;
+    border-color: #2e004f !important;
+    color: #ffffff !important;
+}
+[type="checkbox"] + label:before{
+  display: none;
+}
+
+.btn-check:focus + .btn-info, .btn-info:focus,.btn-check:checked + .btn-info:focus{
+  box-shadow: none;
 }
 /*# sourceMappingURL=style.css.map */

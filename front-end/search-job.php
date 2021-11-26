@@ -50,12 +50,23 @@
 								</div>
 							</div>
 						</div>
+												
 						<div class="widget">
-							<h4 class="mb-25">Location</h4>
+							<h4 class="mb-25">Job Date</h4>
 							<div class="widget placeholdertx mb-10">
 								<div class="form-group">
 									<div class="input-group">
-										<input name="name" type="text" required="" class="form-control" placeholder="Type Location">
+										<input class="form-control" type="date" value="<?= date('Y-m-d'); ?>" id="date-input">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="widget">
+							<h4 class="mb-25">Location (30 Miles)</h4>
+							<div class="widget placeholdertx mb-10">
+								<div class="form-group">
+									<div class="input-group">
+										<input name="name" type="text" class="form-control" placeholder="ZIP Code">
 									</div>
 								</div>
 							</div>
@@ -127,31 +138,19 @@
 								<li>
 									<input type="checkbox" id="oftype_1" class="filled-in">
 									<label for="oftype_1">
-										$1 - $20
+										$100 - $250
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" id="oftype_2" class="filled-in">
 									<label for="oftype_2">
-										$20 - $30 
-									</label>
-								</li>
-								<li>
-									<input type="checkbox" id="oftype_3" class="filled-in">
-									<label for="oftype_3">
-										$30 - $50 
-									</label>
-								</li>
-								<li>
-									<input type="checkbox" id="oftype_4" class="filled-in">
-									<label for="oftype_4">
-										$50k - $100 
+										$250 - $500 
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" id="oftype_5" class="filled-in">
 									<label for="oftype_5">
-										$100 and above
+										$500+
 									</label>
 								</li>
 							</ul>
@@ -230,7 +229,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>
@@ -248,7 +247,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>
@@ -266,7 +265,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>                                
@@ -284,7 +283,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>                                
@@ -302,7 +301,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>                                
@@ -320,7 +319,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>                      
@@ -338,7 +337,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>                                
@@ -356,7 +355,7 @@
 									  </div>
 									  <div class="card-footer justify-content-between d-flex align-items-center">
 										<div class="text-muted"><i class="text-muted me-2 fa fa-clock-o"></i>30 min ago</div>
-										<a href="#" class="waves-effect waves-light btn btn-primary">Apply Now!</a>
+										<a href="#" class="waves-effect waves-light btn btn-primary">Accept Job</a>
 									  </div>
 									</div>
 								</div>                                
